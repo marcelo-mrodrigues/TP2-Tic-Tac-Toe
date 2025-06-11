@@ -32,6 +32,7 @@ $(TARGET): $(OBJECTS) $(TEST_SOURCES)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+
 # Regra para rodar os testes
 test: all
 	./$(TARGET)
@@ -41,3 +42,7 @@ clean:
 	rm -f $(TARGET) $(SRC_DIR)/*.o *.gcda *.gcno *.gcov
 
 .PHONY: all test clean
+
+# Regra para rodar o linter (cpplint)
+lint:
+	python3 libs/cpplint.py src/velha.h src/velha.c tests/testa_velha.cpp

@@ -1,6 +1,8 @@
 #ifndef VELHA_H
 #define VELHA_H
 
+// "Copyright 2025 Marcelo Rodrigues"
+
 /**
  * @brief Verifica o estado de um jogo da velha.
  *
@@ -12,4 +14,4 @@
 
 int verificaVelha(int tabuleiro[3][3]);
 
-#endif // VELHA_H
+#endif  // VELHA_H
