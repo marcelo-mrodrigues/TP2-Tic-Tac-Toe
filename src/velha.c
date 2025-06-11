@@ -4,20 +4,25 @@
 // "Copyright 2025 Marcelo Rodrigues"
 
 int verificaVelha(int tabuleiro[3][3]) {
-    bool temPeca = false;
+    // Checa as 3 linhas horizontais por vitória
+    for (int i = 0; i < 3; i++) {
+        if (tabuleiro[i][0] != 0 && tabuleiro[i][0] == tabuleiro[i][1] && tabuleiro[i][1] == tabuleiro[i][2]) {
+            return tabuleiro[i][0]; // Retorna o jogador (1 para X, 2 para O) 
+        }
+    }
+    // --- VERIFICA EMPATE OU JOGO INDEFINIDO ---
+    int pecasJogadas = 0;
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
-            if (tabuleiro[i][j] != 0) {
-                temPeca = true;
-                break;  // Achar peça
+            if (tabuleiro[i][j] != 0) { // 0 significa que a posição está vazia 
+                pecasJogadas++;
             }
         }
-        if (temPeca) {
-            break;
-            // Se já achamos uma peça, não precisa procurar mais no tabuleiro
-        }
     }
-    if (!temPeca) {
-        return -1;  //  Sem peça retorna indefinido
+
+    if (pecasJogadas == 9) {
+        return 0;  // 0 se o jogo está empatado 
+    } else {
+        return -1;  // -1 se o jogo está indefinido 
     }
-    return 99;}
+}
