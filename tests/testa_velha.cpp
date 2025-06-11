@@ -23,7 +23,7 @@ TEST_CASE("2: Jogo Empatado", "[empate]") {
         {1, 1, 2},
         {2, 1, 2}
     };
-    // Um jogo empatado deve retornar 0 
+    // Um jogo empatado deve retornar 0
     REQUIRE(verificaVelha(tabuleiro) == 0);
 }
 
