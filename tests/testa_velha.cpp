@@ -7,11 +7,20 @@ extern "C" {
     #include "velha.h"
 }
 TEST_CASE("1: Jogo Indefinido - Tabuleiro Vazio", "[indefinido]") {
-    //  O valor 0 significa que a posição está vazia 
+    //  O valor 0 significa que a posição está vazia
     int tabuleiro[3][3] = {
         {0, 0, 0},
         {0, 0, 0},
         {0, 0, 0}
     };
-    //  Jogo indefinido deve retornar -1 
+    //  Jogo indefinido deve retornar -1
     REQUIRE(verificaVelha(tabuleiro) == -1);}
+
+TEST_CASE("3: Vitoria do X - Linha Horizontal", "[vitoria-x]") {
+    int tabuleiro[3][3] = {
+        {1, 1, 1},  // X Ganha
+        {2, 0, 2},
+        {0, 0, 0}
+    };
+    // A função deve retornar 1 se o X for o vencedor
+    REQUIRE(verificaVelha(tabuleiro) == 1);}

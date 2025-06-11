@@ -37,12 +37,13 @@ $(TARGET): $(OBJECTS) $(TEST_SOURCES)
 test: all
 	./$(TARGET)
 
+# Regra para rodar o linter (cpplint)
+lint:
+	python3 libs/cpplint.py src/velha.h src/velha.c tests/testa_velha.cpp
+
 # Regra para limpar os arquivos gerados
 clean:
 	rm -f $(TARGET) $(SRC_DIR)/*.o *.gcda *.gcno *.gcov
 
 .PHONY: all test clean
 
-# Regra para rodar o linter (cpplint)
-lint:
-	python3 libs/cpplint.py src/velha.h src/velha.c tests/testa_velha.cpp
