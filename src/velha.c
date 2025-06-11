@@ -12,6 +12,13 @@ int verificaVelha(int tabuleiro[3][3]) {
             return tabuleiro[i][0];  // Retorna o jogador (1 para X, 2 para O)
         }
     }
+    
+    for (int j = 0; j < 3; j++) {
+        if (tabuleiro[0][j] != 0 && tabuleiro[0][j] == tabuleiro[1][j] && tabuleiro[1][j] == tabuleiro[2][j]) {
+            return tabuleiro[0][j]; 
+        }
+    }   
+
     // --- VERIFICA EMPATE OU JOGO INDEFINIDO ---
     int pecasJogadas = 0;
     for (int i = 0; i < 3; i++) {
