@@ -20,6 +20,12 @@ int verificaVelha(int tabuleiro[3][3]) {
             return tabuleiro[0][j];  // Retorna Vencedor
         }
     }
+
+        // Diagonal principal
+    if (tabuleiro[0][0] != 0 && tabuleiro[0][0] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][2]) {
+        return tabuleiro[0][0];
+    }
+
     // --- VERIFICA EMPATE OU JOGO INDEFINIDO ---
     int pecasJogadas = 0;
     for (int i = 0; i < 3; i++) {
