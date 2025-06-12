@@ -21,8 +21,10 @@ int verificaVelha(int tabuleiro[3][3]) {
         }
     }
 
-        // Diagonal principal
-    if (tabuleiro[0][0] != 0 && tabuleiro[0][0] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][2]) {
+    // Diagonal Principal
+    if (tabuleiro[0][0] != 0
+         && tabuleiro[0][0] == tabuleiro[1][1] 
+          && tabuleiro[1][1] == tabuleiro[2][2]) {
         return tabuleiro[0][0];
     }
 
