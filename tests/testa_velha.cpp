@@ -113,3 +113,14 @@ TEST_CASE("6.2: Vitoria do X - Diagonal Secundaria", "[vitoria-x]") {
     // A função deve retornar 1 se o X for o vencedor
     REQUIRE(verificaVelha(tabuleiro) == 1);
 }
+
+TEST_CASE("Final: Jogo Impossivel - Excesso de pecas", "[impossivel]") {
+    // Estado impossível de jogo da velha (0 O's)
+    int tabuleiro[3][3] = {
+        {1, 1, 1},
+        {0, 0, 0},
+        {0, 0, 0}
+    };
+    // Um jogo impossível deve retornar -2
+    REQUIRE(verificaVelha(tabuleiro) == -2);
+}
