@@ -111,5 +111,5 @@ TEST_CASE("6.2: Vitoria do X - Diagonal Secundaria", "[vitoria-x]") {
     };
 
     // A função deve retornar 1 se o X for o vencedor
-    REQUIRE(verificaVelha(tabuleiro) == 2);
+    REQUIRE(verificaVelha(tabuleiro) == 1);
 }
