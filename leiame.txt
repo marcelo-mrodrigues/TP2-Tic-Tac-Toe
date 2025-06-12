@@ -1,0 +1,14 @@
+Trabalho 2 de Técnicas de Programação 2 - Verificação e Valdação do Jogo da Velha com TDD
+Aluno: Marcelo Marques Rodrigues
+Matrícula: 22/1018960
+
+Para compilar e executar o projeto, utilize os seguintes comandos make:
+
+- make all: Compila o programa de testes.
+- make test: Compila e executa todos os testes unitários.
+- make coverage: Gera o relatório de cobertura de testes (deve ser > 80%).
+- make check: Roda a análise estática com o cppcheck.
+- make lint: Roda a verificação de estilo com o cpplint.
+- make memcheck: Roda os testes com o valgrind para verificar vazamentos de memória.
+- make docs: Gera a documentação do projeto com o Doxygen (o resultado fica na pasta html/).
+- make clean: Remove todos os arquivos gerados pela compilação, testes e documentação.

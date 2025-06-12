@@ -37,9 +37,21 @@ $(TARGET): $(OBJECTS) $(TEST_SOURCES)
 test: all
 	./$(TARGET)
 
+# Regra para rodar o analisador estático
+check:
+	cppcheck --enable=warning --error-exitcode=1 src/ tests/
+
+# Regra para rodar com valgrind
+memcheck: all
+	valgrind --leak-check=full --error-exitcode=1 ./$(TARGET)
+
 # Regra para rodar o linter (cpplint)
 lint:
 	python3 libs/cpplint.py src/velha.h src/velha.c tests/testa_velha.cpp
+
+# Regra para gerar relatório de cobertura
+coverage: test
+	gcovr --gcov-ignore-parse-errors --filter src/ --root . --print-summary --fail-under-line 80
 
 # Regra para limpar os arquivos gerados
 clean:
@@ -47,3 +59,5 @@ clean:
 
 .PHONY: all test clean
 
+docs:
+	doxygen
