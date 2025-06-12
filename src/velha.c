@@ -28,7 +28,9 @@ int verificaVelha(int tabuleiro[3][3]) {
         return tabuleiro[0][0];
     }
     // Diagonal Secundária
-    if (tabuleiro[0][2] != 0 && tabuleiro[0][2] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][0]) {
+    if (tabuleiro[0][2] != 0
+         && tabuleiro[0][2] == tabuleiro[1][1]
+          && tabuleiro[1][1] == tabuleiro[2][0]) {
         return tabuleiro[0][2];
     }
     // --- VERIFICA EMPATE OU JOGO INDEFINIDO ---
