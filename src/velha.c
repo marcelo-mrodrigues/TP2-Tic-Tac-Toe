@@ -4,6 +4,21 @@
 // "Copyright 2025 Marcelo Rodrigues"
 
 int verificaVelha(int tabuleiro[3][3]) {
+    // validação Jogo Válido
+    int x_count = 0;
+    int o_count = 0;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (tabuleiro[i][j] == 1) x_count++;
+            if (tabuleiro[i][j] == 2) o_count++;
+    }
+}
+
+    if (o_count > x_count || x_count > o_count + 1) {
+        return -2; // Jogo impossível
+}     
+
+
     // Checa as 3 linhas horizontais por vitória
     for (int i = 0; i < 3; i++) {
         if (tabuleiro[i][0] != 0
